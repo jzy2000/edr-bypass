@@ -135,3 +135,61 @@ Token steal / impersonate of the agent service, named-pipe or ALPC peer spoof, l
 WMI event subscriptions, scheduled tasks, COM / Run keys, services in the Filter load group, UEFI / bootkit (out of reach for most endpoint tests, still a coverage question).
 
 **Oracle.** Persistence that fires around the product's start is logged. Early-boot services cannot occupy the product's communication slot.
+
+## 19. Freeze and coma
+
+Killing the agent trips a watchdog. Suspending it often does not: the process still looks alive. Public classes include working-set starvation, thread suspend, job freeze, and Windows Error Reporting dump paths that suspend every thread of a target and then fail to resume them. [WerFaultSecure](https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting) runs as a protected process, which is why a dump of a protected image is a different privilege story than `OpenProcess` from an ordinary admin.
+
+**Oracle.** After the freeze, kernel enforcement (minifilter, object callbacks, WFP) still holds, or a watchdog notices threads that are not running. Miss = user-mode sensors stop and nothing restarts or alerts because the process object never exited.
+
+## 20. Minifilter altitude and detach
+
+Filter Manager orders minifilters by altitude. A colliding altitude can keep the product's instance from attaching. With kernel write, detaching an instance or swapping pre/post callbacks blinds file telemetry without unloading the driver service. That is a T3 integrity test. User-mode altitude tamper is a T1 registry test (see the registry section) and is a different claim.
+
+**Oracle.** `fltmc` still shows the instance at the expected altitude after the attempt, and a canary write is still blocked or logged. Miss = the instance is gone or shadowed and file policy goes quiet.
+
+## 21. WDAC and AppLocker as a weapon
+
+Application control can deny the product's own binaries, DLLs, and drivers if an admin can deploy a policy. That is "Windows blocking the sensor," not a parser bug. Also test the reverse: the product's allowlist trusts a path or signer the tester can write.
+
+**Oracle.** A new code-integrity policy that targets the sensor is blocked, or the product repairs on next boot and alerts. An attacker-writable directory is not on the product's trust list.
+
+## 22. Callback and dispatch integrity
+
+Products register process, thread, image, registry, and object callbacks, and they handle IRPs. With a lab driver loaded, the question is whether the product notices a missing callback or a swapped dispatch routine. Ring-0 write is assumed at T3. The finding is the lack of an integrity or last-gasp signal, not the fact that kernel code can write kernel memory.
+
+**Oracle.** Callback removal or a silent unload produces an alert or a repair. Direct kernel object edits that hide a process are the same class: the sensor's view and the scheduler's view diverge, and something should say so.
+
+## 23. Parser robustness
+
+Image, certificate, command-line, and cache parsers fail in more than one way. Map the failure to a class:
+
+| What you changed | If the product dies | If it returns bad data | If it skips the scan |
+|---|---|---|---|
+| Header field, count, RVA | Availability | Disclosure or wrong trust | Detection bypass |
+| 32-bit path vs 64-bit path | Same bug, second site | | |
+| Size that wraps | Pool corruption | | |
+| Pointer that faults vs pointer that is valid | Crash vs silent read | | |
+| Cache blob at driver entry | Boot loop | | |
+
+SEH around the outer function does not cover a deferred callback. Say which scope you checked.
+
+**Oracle.** Malformed input is dropped, the sensor stays up, and a later well-formed bad file is still caught. Miss = the process or driver dies, or this one file is exempt forever.
+
+## 24. Policy store and config cache
+
+Two stores show up on almost every agent: a local policy database the user-mode service reloads, and a cache the driver reads from its service key at start. Both are "the product trusts bytes it wrote earlier."
+
+**Oracle.** A local edit without the cloud signature does not stick, or it is overwritten on the next poll and logged. A cache blob that is not produced by the agent does not parse into a policy change, an exclusion, or a crash-on-boot. Cutting the network to freeze a lab policy is a test harness issue: record that you isolated the agent, and restore it.
+
+## 25. Own-process and parent exemptions
+
+Callbacks often allow the product's own image, its parent, and SYSTEM. That is required for the agent to manage itself. It becomes a bypass only when an outsider can *become* that image or that parent: hollow the UI helper, plant a DLL the helper loads, or `CreateProcess` the agent suspended and keep the parent's handle.
+
+**Oracle.** A non-product parent does not receive a full handle. Code running inside a sibling does not inherit filter-port or file-protect exemptions unless that sibling is supposed to be trusted, and you have said so.
+
+## 26. Decoy identity
+
+Some "last gasp" or multi-product logic keys off service name, image name, or a window class. A second service that matches the pattern can confuse the heuristic without touching the real agent.
+
+**Oracle.** A look-alike name does not suppress alerts, heartbeats, or tamper response for the real process.

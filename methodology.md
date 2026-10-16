@@ -100,6 +100,8 @@ A useful campaign finishes the matrix, including the boring holds. Track:
 
 Severity follows attacker gain, not cleverness. "I crashed the driver" is a denial-of-protection finding. "I read a secret from an unprotected process" is a confidentiality finding. "I changed one ACL" with the driver still blocking is not a finding.
 
+Parser bugs and "the control blocked me" claims go through [assessment.md](assessment.md) before they are closed: reachability, feature state, token exemption, and the variant questions.
+
 ## What this methodology is not
 
 It is not a ranked exploit chain, a kernel-exploitation course, or a place to drop unpublished bugs. If you need a working PoC against a specific product, that work stays in a private tracker.

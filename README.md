@@ -18,8 +18,9 @@ If you do not have written authorization for the environment under test, stop.
 
 1. Read [methodology.md](methodology.md) first. The test loop and oracle rules matter more than any single technique.
 2. Work [CHECKLIST.md](CHECKLIST.md) top to bottom, or pick a control plane (self-protect, minifilter, telemetry, …).
-3. Use [techniques.md](techniques.md) when a checkbox needs more context.
-4. Cite public sources from [references.md](references.md). Do not paste internal writeups into a fork.
+3. Use [assessment.md](assessment.md) before you call a parser bug or a bypass done. It is the gate, the trigger classes, and the variant questions.
+4. Use [techniques.md](techniques.md) when a checkbox needs more context.
+5. Cite public sources from [references.md](references.md). Do not paste internal writeups into a fork.
 
 ## Ethics
 

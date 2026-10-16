@@ -172,7 +172,39 @@ Do not treat a SYSTEM or parent-process exemption as a T0 miss.
 - [ ] **X-04** Service in an early load group (see L-05, C-02, B-07). **T1.**
 - [ ] **X-05** Firmware / bootkit class — usually a coverage question, not a lab PoC. Record whether the product claims this plane.
 
-## 16. Evidence close-out
+## 16. Assessment gate
+
+Do this before a parser or bypass claim. Detail is in [assessment.md](assessment.md).
+
+- [ ] **A-01** Name the real entry point (minifilter, load-image, create-process, registry, filter port, WFP, driver-entry cache). Zero callers = dead code, not a miss.
+- [ ] **A-02** List upstream guards. A crash that needs a harness to skip a clamp is a harness artifact.
+- [ ] **A-03** Name the feature the parser serves, and the privilege and channel required to deliver input.
+- [ ] **A-04** Confirm the feature is on and the agent has received policy. Off-mode tests are inconclusive.
+- [ ] **A-05** If the probe was SYSTEM or a parent exemption, repeat it as Session 1 admin before writing "admin can."
+- [ ] **A-06** Call-site table exists: site, guard, reachability, delivery, protection. You tested the easiest row first.
+- [ ] **A-07** On a parser result, you asked the variant questions: address class, unsigned size, 32-vs-64 sibling, and where a *successful* read goes.
+- [ ] **A-08** Other callers and other file locations were checked before concluding anti-tamper blocks the bug.
+- [ ] **A-09** SEH scope was checked (outer function vs deferred callback / work item / DPC).
+- [ ] **A-10** Allocation size and loop bound come from the same field, or you filed the mismatch.
+- [ ] **A-11** A second read after a check (mapped view, registry, shared buffer) was considered for TOCTOU.
+- [ ] **A-12** Bugcheck evidence is a full dump: code, faulting instruction, product driver frames.
+
+## 17. Classes the first pass under-weights
+
+- [ ] **G-01** Freeze / suspend / WER dump path leaves the agent process "running" but not scanning. **T1.** Hold = kernel policy still enforces, or a watchdog alerts on stuck threads.
+- [ ] **G-02** Altitude collision prevents the minifilter instance from attaching. **T1.** Separate from T3 detach.
+- [ ] **G-03** Application-control policy (WDAC / AppLocker) denies the sensor's own binaries. **T1.**
+- [ ] **G-04** Product allowlist includes an attacker-writable path or a signer you can obtain. **T0/T1.**
+- [ ] **G-05** Sparse, compressed, or reparse-point file reaches a size or mapping check the normal file does not. **T1.**
+- [ ] **G-06** Alternate data stream or first-open fills a per-file hash cache; the default stream is then replaced. **T1.**
+- [ ] **G-07** On-disk cache or service-parameter blob parsed at driver start is not produced by the agent. **T1** + reboot. Hold = rejected, no boot loop.
+- [ ] **G-08** Local policy database edited without a cloud signature. **T1.** Hold = ignored or overwritten and logged.
+- [ ] **G-09** Decoy service or window whose name matches a last-gasp / peer-product heuristic. **T1.**
+- [ ] **G-10** Signature check is presence or a subject string, not chain plus hash. **T1.**
+- [ ] **G-11** 32-bit and 64-bit parser siblings do not share the same bounds check. **T0/T1.**
+- [ ] **G-12** Callback or dispatch integrity after a lab driver load (T3 only). Hold = alert or repair, not "kernel write is impossible."
+
+## 18. Evidence close-out
 
 - [ ] **Z-01** Every miss has a product oracle (log, block, absence of restart), not only a custom probe.
 - [ ] **Z-02** Every miss names the privilege and the single variable you changed.
@@ -187,4 +219,5 @@ Do not treat a SYSTEM or parent-process exemption as a T0 miss.
 3. P-02, P-03, D-01, F-04, F-07 (public, high-churn classes)
 4. C-01, C-02, B-01, K-01 (trust and lifecycle)
 5. E-01, E-05, E-09 (parsers and detectors)
-6. Close with Z-01 … Z-05
+6. A-01 … A-07 on any parser claim, then G-01, G-06, G-07
+7. Close with Z-01 … Z-05
