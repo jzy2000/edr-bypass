@@ -1,4 +1,6 @@
 .DS_Store
+lab/local.yaml
+scripts/deny.txt
 *.obj
 *.exe
 *.pdb

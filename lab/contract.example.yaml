@@ -1,0 +1,10 @@
+# Copy to lab/local.yaml. That file is gitignored. Do not commit real paths.
+
+scope: "written authorization reference, no customer name"
+product_log: "C:\\path\\to\\sensor.log"
+install_dir: "C:\\path\\to\\install"
+data_dir: "C:\\path\\to\\data"
+session1_admin: "how a non-SYSTEM admin is launched"
+restore: "revert the lab snapshot or reinstall the product"
+os: "Windows version and build"
+hvci: "on or off"

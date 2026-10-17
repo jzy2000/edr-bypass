@@ -1,27 +1,9 @@
-# EDR evasion testing checklist
+# EDR evasion testing
 
-A curated checklist and methodology for **authorized** product-security and purple-team testing of Endpoint Detection and Response (EDR) and anti-tamper controls.
+Skill pack for an agent that builds an authorized proof of concept. Start at [AGENTS.md](AGENTS.md). The workflow is [skill/SKILL.md](skill/SKILL.md). One test is one file under [cards](cards/).
 
-This repository is a test guide, not a malware kit. It tells you **which control planes to exercise**, **what a hold vs a miss looks like**, and **what evidence to keep**. It does not publish unpublished product bugs, vendor names, ticket IDs, or exploit procedures.
+The worked episode is [U-01](examples/U-01/README.md). Each card under [cards](cards/) is one test. If a card has `skip: true`, record `skipped` and do not invent a procedure.
 
-[nt-copyfile.cpp](nt-copyfile.cpp) is a small demonstration that Win32 wrappers such as `CopyFileExW` are a different monitoring surface than the native `NtCreateFile` / `NtReadFile` / `NtWriteFile` path.
+`lab/local.yaml` is local and not committed. Copy [lab/contract.example.yaml](lab/contract.example.yaml) to create it.
 
-## Who this is for
-
-- Product-security engineers assessing their own EDR / EPP / anti-ransomware stack
-- Purple, red teams running an agreed evasion-resistance campaign
-- Researchers comparing public, well-known technique *classes* against a control matrix
-
-If you do not have written authorization for the environment under test, stop.
-
-## How to use this repo
-
-1. Read [methodology.md](methodology.md) first. The test loop and oracle rules matter more than any single technique.
-2. Work [CHECKLIST.md](CHECKLIST.md) top to bottom, or pick a control plane (self-protect, minifilter, telemetry, …).
-3. Use [assessment.md](assessment.md) before you call a parser bug or a bypass done. It is the gate, the trigger classes, and the variant questions.
-4. Use [techniques.md](techniques.md) when a checkbox needs more context.
-5. Cite public sources from [references.md](references.md). Do not paste internal writeups into a fork.
-
-## Ethics
-
-Use this material only against systems you own or are contracted to test. Publishing a checklist of public technique classes is not permission to attack anyone else's product, customers, or lab.
+Use this only on systems you own or are contracted to test.

@@ -1,0 +1,898 @@
+# Machine-readable index. Open a card only after selecting its id.
+# skip true means the action is unspecified. Do not invent a procedure.
+first_pass: [S-01, S-03, S-04, U-01, U-05, F-01, F-04, F-07, H-01, P-02, P-04, D-01, R-01, K-01, N-01, B-01]
+tests:
+  - id: S-01
+    plane: setup
+    privilege: [T1]
+    kind: setup
+    skip: false
+    card: cards/S-01.md
+  - id: S-02
+    plane: setup
+    privilege: [T1]
+    kind: setup
+    skip: false
+    card: cards/S-02.md
+  - id: S-03
+    plane: setup
+    privilege: [T1]
+    kind: setup
+    skip: false
+    card: cards/S-03.md
+  - id: S-04
+    plane: setup
+    privilege: [T1]
+    kind: setup
+    skip: false
+    card: cards/S-04.md
+  - id: S-05
+    plane: setup
+    privilege: [T1]
+    kind: setup
+    skip: false
+    card: cards/S-05.md
+  - id: U-01
+    plane: userland-hooks
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/U-01.md
+  - id: U-02
+    plane: userland-hooks
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/U-02.md
+  - id: U-03
+    plane: userland-hooks
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/U-03.md
+  - id: U-04
+    plane: userland-hooks
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/U-04.md
+  - id: U-05
+    plane: userland-hooks
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/U-05.md
+  - id: U-06
+    plane: userland-hooks
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/U-06.md
+  - id: U-07
+    plane: userland-hooks
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/U-07.md
+  - id: U-08
+    plane: userland-hooks
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/U-08.md
+  - id: P-01
+    plane: process-create
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/P-01.md
+  - id: P-02
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-02.md
+  - id: P-03
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-03.md
+  - id: P-04
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-04.md
+  - id: P-05
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-05.md
+  - id: P-06
+    plane: process-create
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/P-06.md
+  - id: P-07
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-07.md
+  - id: P-08
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-08.md
+  - id: P-09
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-09.md
+  - id: P-10
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-10.md
+  - id: P-11
+    plane: process-create
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/P-11.md
+  - id: D-01
+    plane: dll-com
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/D-01.md
+  - id: D-02
+    plane: dll-com
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/D-02.md
+  - id: D-03
+    plane: dll-com
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/D-03.md
+  - id: D-04
+    plane: dll-com
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/D-04.md
+  - id: D-05
+    plane: dll-com
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/D-05.md
+  - id: D-06
+    plane: dll-com
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/D-06.md
+  - id: H-01
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-01.md
+  - id: H-02
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-02.md
+  - id: H-03
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-03.md
+  - id: H-04
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-04.md
+  - id: H-05
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-05.md
+  - id: H-06
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-06.md
+  - id: H-07
+    plane: self-protect
+    privilege: [T2]
+    kind: test
+    skip: false
+    card: cards/H-07.md
+  - id: H-08
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-08.md
+  - id: H-09
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-09.md
+  - id: H-10
+    plane: self-protect
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/H-10.md
+  - id: L-01
+    plane: ppl-signature
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/L-01.md
+  - id: L-02
+    plane: ppl-signature
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/L-02.md
+  - id: L-03
+    plane: ppl-signature
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/L-03.md
+  - id: L-04
+    plane: ppl-signature
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/L-04.md
+  - id: L-05
+    plane: ppl-signature
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/L-05.md
+  - id: F-01
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-01.md
+  - id: F-02
+    plane: filesystem
+    privilege: [T0, T2]
+    kind: test
+    skip: false
+    card: cards/F-02.md
+  - id: F-03
+    plane: filesystem
+    privilege: [T1, T3]
+    kind: test
+    skip: false
+    card: cards/F-03.md
+  - id: F-04
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-04.md
+  - id: F-05
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-05.md
+  - id: F-06
+    plane: filesystem
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/F-06.md
+  - id: F-07
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-07.md
+  - id: F-08
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-08.md
+  - id: F-09
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-09.md
+  - id: F-10
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-10.md
+  - id: F-11
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-11.md
+  - id: F-12
+    plane: filesystem
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/F-12.md
+  - id: F-13
+    plane: filesystem
+    privilege: [T0, T0]
+    kind: test
+    skip: false
+    card: cards/F-13.md
+  - id: F-14
+    plane: filesystem
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/F-14.md
+  - id: R-01
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-01.md
+  - id: R-02
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-02.md
+  - id: R-03
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-03.md
+  - id: R-04
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-04.md
+  - id: R-05
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-05.md
+  - id: R-06
+    plane: registry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/R-06.md
+  - id: K-01
+    plane: kernel
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/K-01.md
+  - id: K-02
+    plane: kernel
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/K-02.md
+  - id: K-03
+    plane: kernel
+    privilege: [T3]
+    kind: test
+    skip: false
+    card: cards/K-03.md
+  - id: K-04
+    plane: kernel
+    privilege: [T3]
+    kind: test
+    skip: false
+    card: cards/K-04.md
+  - id: K-05
+    plane: kernel
+    privilege: [T3]
+    kind: test
+    skip: false
+    card: cards/K-05.md
+  - id: K-06
+    plane: kernel
+    privilege: [T1, T3]
+    kind: test
+    skip: false
+    card: cards/K-06.md
+  - id: K-07
+    plane: kernel
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/K-07.md
+  - id: K-08
+    plane: kernel
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/K-08.md
+  - id: C-01
+    plane: filter-port
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/C-01.md
+  - id: C-02
+    plane: filter-port
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/C-02.md
+  - id: C-03
+    plane: filter-port
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/C-03.md
+  - id: C-04
+    plane: filter-port
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/C-04.md
+  - id: C-05
+    plane: filter-port
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/C-05.md
+  - id: C-06
+    plane: filter-port
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/C-06.md
+  - id: N-01
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-01.md
+  - id: N-02
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-02.md
+  - id: N-03
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-03.md
+  - id: N-04
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-04.md
+  - id: N-05
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-05.md
+  - id: N-06
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-06.md
+  - id: N-07
+    plane: telemetry
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/N-07.md
+  - id: B-01
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-01.md
+  - id: B-02
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-02.md
+  - id: B-03
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-03.md
+  - id: B-04
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-04.md
+  - id: B-05
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-05.md
+  - id: B-06
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-06.md
+  - id: B-07
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-07.md
+  - id: B-08
+    plane: lifecycle
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/B-08.md
+  - id: E-01
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-01.md
+  - id: E-02
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-02.md
+  - id: E-03
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-03.md
+  - id: E-04
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-04.md
+  - id: E-05
+    plane: detection
+    privilege: [T0, T1]
+    kind: parser
+    skip: false
+    card: cards/E-05.md
+  - id: E-06
+    plane: detection
+    privilege: [T0, T1]
+    kind: parser
+    skip: false
+    card: cards/E-06.md
+  - id: E-07
+    plane: detection
+    privilege: [T0]
+    kind: parser
+    skip: false
+    card: cards/E-07.md
+  - id: E-08
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-08.md
+  - id: E-09
+    plane: detection
+    privilege: [T0, T1]
+    kind: parser
+    skip: false
+    card: cards/E-09.md
+  - id: E-10
+    plane: detection
+    privilege: [T1]
+    kind: parser
+    skip: false
+    card: cards/E-10.md
+  - id: E-11
+    plane: detection
+    privilege: [T0]
+    kind: parser
+    skip: false
+    card: cards/E-11.md
+  - id: T-01
+    plane: tokens
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/T-01.md
+  - id: T-02
+    plane: tokens
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/T-02.md
+  - id: T-03
+    plane: tokens
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/T-03.md
+  - id: T-04
+    plane: tokens
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/T-04.md
+  - id: T-05
+    plane: tokens
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/T-05.md
+  - id: O-01
+    plane: lolbas
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/O-01.md
+  - id: O-02
+    plane: lolbas
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/O-02.md
+  - id: O-03
+    plane: lolbas
+    privilege: [T0]
+    kind: test
+    skip: false
+    card: cards/O-03.md
+  - id: O-04
+    plane: lolbas
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/O-04.md
+  - id: O-05
+    plane: lolbas
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/O-05.md
+  - id: X-01
+    plane: persistence
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/X-01.md
+  - id: X-02
+    plane: persistence
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/X-02.md
+  - id: X-03
+    plane: persistence
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/X-03.md
+  - id: X-04
+    plane: persistence
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/X-04.md
+  - id: X-05
+    plane: persistence
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/X-05.md
+  - id: A-01
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-01.md
+  - id: A-02
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-02.md
+  - id: A-03
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-03.md
+  - id: A-04
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-04.md
+  - id: A-05
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-05.md
+  - id: A-06
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-06.md
+  - id: A-07
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-07.md
+  - id: A-08
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-08.md
+  - id: A-09
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-09.md
+  - id: A-10
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-10.md
+  - id: A-11
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-11.md
+  - id: A-12
+    plane: assessment
+    privilege: [T1]
+    kind: gate
+    skip: false
+    card: cards/A-12.md
+  - id: G-01
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-01.md
+  - id: G-02
+    plane: extra
+    privilege: [T1, T3]
+    kind: test
+    skip: false
+    card: cards/G-02.md
+  - id: G-03
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-03.md
+  - id: G-04
+    plane: extra
+    privilege: [T0, T1]
+    kind: test
+    skip: false
+    card: cards/G-04.md
+  - id: G-05
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-05.md
+  - id: G-06
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-06.md
+  - id: G-07
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-07.md
+  - id: G-08
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-08.md
+  - id: G-09
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-09.md
+  - id: G-10
+    plane: extra
+    privilege: [T1]
+    kind: test
+    skip: false
+    card: cards/G-10.md
+  - id: G-11
+    plane: extra
+    privilege: [T0, T1]
+    kind: parser
+    skip: false
+    card: cards/G-11.md
+  - id: G-12
+    plane: extra
+    privilege: [T3]
+    kind: test
+    skip: false
+    card: cards/G-12.md
+  - id: Z-01
+    plane: evidence
+    privilege: [T1]
+    kind: closeout
+    skip: false
+    card: cards/Z-01.md
+  - id: Z-02
+    plane: evidence
+    privilege: [T1]
+    kind: closeout
+    skip: false
+    card: cards/Z-02.md
+  - id: Z-03
+    plane: evidence
+    privilege: [T1]
+    kind: closeout
+    skip: false
+    card: cards/Z-03.md
+  - id: Z-04
+    plane: evidence
+    privilege: [T1]
+    kind: closeout
+    skip: false
+    card: cards/Z-04.md
+  - id: Z-05
+    plane: evidence
+    privilege: [T1]
+    kind: closeout
+    skip: false
+    card: cards/Z-05.md

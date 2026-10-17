@@ -1,0 +1,4 @@
+# Copy to scripts/deny.txt (gitignored). One banned substring per line.
+# The checker scans cards, the skill, and examples. It does not scan archive/ or deny.txt.
+VENDOR_NAME
+TICKET-1234

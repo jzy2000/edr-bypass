@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EDR test verdict",
+  "type": "object",
+  "required": ["id", "result", "privilege", "variable", "oracle", "feature_on"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Z]+-[0-9]{2}$" },
+    "result": { "enum": ["hold", "miss", "inconclusive", "skipped"] },
+    "privilege": { "type": "string" },
+    "variable": { "type": "string" },
+    "oracle": { "type": "string" },
+    "feature_on": { "type": "boolean" },
+    "bugcheck": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

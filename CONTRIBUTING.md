@@ -1,30 +1,20 @@
 # Contributing
 
-This repo is a **public testing checklist**. Keep it that way.
+An agent loads `AGENTS.md`, then one card. Do not add a second prose checklist.
 
-## Accept
+## A card may change when
 
-- New technique *classes* that are already discussed in public research
-- Clearer oracles (what "hold" vs "miss" looks like)
-- Coverage gaps in the control-plane matrix
-- Public references (papers, talks, Microsoft docs, well-known research tools)
-- Clarifications to [methodology.md](methodology.md)
+- `action` becomes a public procedure and `skip` is set to false
+- the oracle line gets more specific
+- `public_apis` lists only documented Windows APIs
 
 ## Reject
 
-- Vendor, product, team, or employee names
-- Internal ticket IDs, wiki links, hostnames, customer data
-- Unpublished vulnerability details or vendor-specific IOCTL / device / port names
-- Exploit source, shellcode, vulnerable-driver payloads, or "run this to kill X"
-- Step-by-step attack procedures that a reader can follow to compromise a live product
-- Cloud / SaaS / CI findings that are not endpoint EDR evasion
+- A product, person, team, ticket, host, or key
+- A procedure that only works if those are pasted in
+- Exploit source, shellcode, or a vulnerable-driver payload
+- A second copy of the workflow outside `skill/SKILL.md`
 
-If a note only makes sense because you tested one commercial agent last week, generalize it until the vendor disappears. If it cannot be generalized, it does not belong here.
+`archive/` is the previous essay form. Do not send an agent there.
 
-## Style
-
-- One checkbox = one testable claim
-- Privilege assumed, then the oracle, then what to record
-- Link the first mention of a named public technique to a canonical writeup
-- No backticks inside markdown link text: write [NtCopyFile](nt-copyfile.cpp), not a code-span link
-- No emoji
+No backticks inside markdown link text.
